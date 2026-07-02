@@ -1,0 +1,202 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(to bottom,#8fd3ff,#ffffff);
+
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#mensaje{
+    margin-bottom:35px;
+    font-size:32px;
+    font-weight:bold;
+    color:#444;
+    cursor:pointer;
+    user-select:none;
+}
+
+.flor{
+    position:relative;
+    width:360px;
+    height:450px;
+}
+
+/* ---------- TALLO ---------- */
+
+.tallo{
+    position:absolute;
+    width:10px;
+    height:220px;
+    background:#2e8b57;
+    left:175px;
+    top:165px;
+    border-radius:20px;
+}
+
+/* ---------- HOJAS ---------- */
+
+.hoja{
+    position:absolute;
+    width:70px;
+    height:40px;
+    background:#46c96a;
+    border-radius:100px 0;
+}
+
+.izquierda{
+    left:110px;
+    top:280px;
+    transform:rotate(-35deg);
+}
+
+.derecha{
+    left:180px;
+    top:320px;
+    transform:scaleX(-1) rotate(-35deg);
+}
+
+/* ---------- PÉTALOS ---------- */
+
+.petalo{
+
+    position:absolute;
+
+    width:120px;
+    height:165px;
+
+    background:#ff4f96;
+
+    border-radius:120px 120px 35px 35px;
+
+    left:120px;
+    top:15px;
+
+    transform-origin:center 125px;
+
+    opacity:0;
+
+    transition:.6s;
+
+    box-shadow:0 5px 20px rgba(255,0,100,.25);
+
+}
+
+.show{
+    opacity:1 !important;
+}
+
+.p1{transform:rotate(0deg) scale(0);}
+.p2{transform:rotate(45deg) scale(0);}
+.p3{transform:rotate(90deg) scale(0);}
+.p4{transform:rotate(135deg) scale(0);}
+.p5{transform:rotate(180deg) scale(0);}
+.p6{transform:rotate(225deg) scale(0);}
+.p7{transform:rotate(270deg) scale(0);}
+.p8{transform:rotate(315deg) scale(0);}
+
+/* ---------- CENTRO ---------- */
+
+#centro{
+
+    position:absolute;
+
+    width:170px;
+    height:170px;
+
+    left:95px;
+    top:55px;
+
+    border-radius:50%;
+
+    background:#FFD93D;
+
+    border:8px solid #FFC107;
+
+    overflow:hidden;
+
+    z-index:20;
+
+    box-shadow:
+        0 0 20px gold,
+        0 0 45px rgba(255,215,0,.8);
+
+}
+
+/* La foto está oculta al principio */
+
+#centro img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    transition:opacity 1s ease;
+
+}
+
+/* ---------- TEXTO ---------- */
+
+#textoFinal{
+
+    margin-top:20px;
+
+    font-size:48px;
+
+    color:#ff2d75;
+
+    font-weight:bold;
+
+    opacity:0;
+
+    transition:1s;
+
+    text-align:center;
+
+}
+
+/* ---------- CORAZONES ---------- */
+
+.corazon{
+
+    position:absolute;
+
+    bottom:-40px;
+
+    animation:subir 5s linear forwards;
+
+    pointer-events:none;
+
+}
+
+@keyframes subir{
+
+    0%{
+        transform:translateY(0) scale(.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.4);
+        opacity:0;
+    }
+
+}
