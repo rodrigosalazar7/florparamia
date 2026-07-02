@@ -3,6 +3,7 @@ const centro = document.getElementById("centro");
 const foto = centro.querySelector("img");
 const texto = document.getElementById("textoFinal");
 const mensaje = document.getElementById("mensaje");
+const musica = document.getElementById("musica");
 
 let iniciado = false;
 
@@ -12,8 +13,28 @@ centro.addEventListener("click", iniciar);
 
 async function iniciar() {
 
+    
     if (iniciado) return;
     iniciado = true;
+
+    musica.volume = 0;
+musica.play();
+
+let volumen = 0;
+
+const fade = setInterval(() => {
+
+    volumen += 0.02;
+
+    musica.volume = volumen;
+
+    if(volumen >= 0.5){
+
+        clearInterval(fade);
+
+    }
+
+},120);
 
     // Ocultar el mensaje
     mensaje.style.opacity = "0";
